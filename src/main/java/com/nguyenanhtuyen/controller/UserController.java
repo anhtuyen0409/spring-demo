@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nguyenanhtuyen.dto.request.UserRequestDTO;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -33,7 +35,7 @@ public class UserController {
 	}
 
 	@PostMapping("/")
-	public String addUser(@RequestBody UserRequestDTO userDTO) {
+	public String addUser(@Valid @RequestBody UserRequestDTO userDTO) {
 		return "User added";
 	}
 
